@@ -7,9 +7,22 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=flase
+    url: jdbc:mysql://localhost:3306/db2019?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false
     username: root
-    password: wjgful4163
+    #password: wjgful4163
+    password: 123456
+    filters: stat
+    initialSize: 2
+    maxActive: 300
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxPoolPreparedStatementPerConnectionSize: 200
 mybatis:
   mapperlocations: classpath:mapper/*.xml
   #所有实体类别名 entity
