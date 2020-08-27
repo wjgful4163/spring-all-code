@@ -3,14 +3,14 @@
 
 <mapper namespace="com.atguigu.springcloud.dao.PaymentDao">
     <resultMap id="BaseResultMap" type="com.atguigu.springcloud.entities.Payment">
-        <id column="id" jdbcType="bigint" property="id"/>
+        <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="serial" jdbcType="VARCHAR" property="serial"/>
     </resultMap>
 
     <sql id="Base_Column_list">
         id,serial
     </sql>
-    <select id="getPaymentById" parameterType="java.lang.long" resultType="BaseResultMap">
+    <select id="getPaymentById" parameterType="long" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_list"/>
         from payment

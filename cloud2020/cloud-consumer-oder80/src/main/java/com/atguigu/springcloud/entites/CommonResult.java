@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.entities;
+package com.atguigu.springcloud.entites;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CommResult<T> {
+public class CommonResult<T> {
     private Integer code;
     private  String message;
     private T data;
 
-    public CommResult(Integer code,String message){
+    public CommonResult(Integer code, String message){
         this(code,message,null);
     }
 }
